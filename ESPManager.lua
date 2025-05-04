@@ -29,7 +29,7 @@ return function(Config, Utilities, ESPObject, ESPConfig)
             end
         end
         ESPManager.VanillaUIVisible = false
-        warn("[Skull Hub] Vanilla UI hidden - ESP Enabled")
+        warn("[VERBAL Hub] Vanilla UI hidden - ESP Enabled")
     end
     
     -- Function to restore vanilla name/health bars
@@ -51,7 +51,7 @@ return function(Config, Utilities, ESPObject, ESPConfig)
             end
         end
         ESPManager.VanillaUIVisible = true
-        warn("[Skull Hub] Vanilla UI restored - ESP Disabled")
+        warn("[verbal Hub] Vanilla UI restored - ESP Disabled")
     end
     
     function ESPManager.Update()
@@ -116,7 +116,7 @@ return function(Config, Utilities, ESPObject, ESPConfig)
         if Config.Enabled then
             hideVanillaUI()
         end
-        warn("[Skull Hub] ESP Initialized - Enabled:", Config.Enabled)
+        warn("[verbal Hub] ESP Initialized - Enabled:", Config.Enabled)
     end
     
     function ESPManager.Cleanup()
@@ -135,12 +135,12 @@ return function(Config, Utilities, ESPObject, ESPConfig)
         
         -- Restore vanilla UI when cleaning up
         restoreVanillaUI()
-        print("[Skull Hub] ESP Cleaned Up - Restored Vanilla UI")
+        print("[verbal Hub] ESP Cleaned Up - Restored Vanilla UI")
     end
     
     -- Handle ESP enable/disable with reset and debug
     function ESPManager.SetEnabled(enabled)
-        print("[Skull Hub] Attempting to set ESP Enabled to:", enabled)
+        print("[verbal Hub] Attempting to set ESP Enabled to:", enabled)
         
         -- Ensure Config.Enabled reflects the desired state
         Config.Enabled = enabled
@@ -169,7 +169,7 @@ return function(Config, Utilities, ESPObject, ESPConfig)
         
         return function()
             local newState = not ESPManager.IsEnabled()
-            print("[Skull Hub] Keybind Toggling ESP to:", newState)
+            print("[VERBAL Hub] Keybind Toggling ESP to:", newState)
             ESPManager.SetEnabled(newState)
             return newState
         end
